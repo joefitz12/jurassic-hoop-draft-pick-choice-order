@@ -1,38 +1,124 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	text-align: center;
+	background-image: url('./jurassic-hoop.png');
+	color: white;
+	height: 100vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	/* background-color: #282c34; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 64px;
+	color: white;
+	text-shadow: #ca3f97 1px 0 10px;
+	padding: 50px 0;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
+}
+
+button {
+	font-size: 48px;
+	min-width: 300px;
+	display: flex;
+	margin: 0 auto;
+	padding: 12px 32px;
+	background: transparent;
+	color: white;
+	text-shadow: #ca3f97 1px 0 10px;
+	border: 2px solid white;
+	border-radius: 4px;
+	box-shadow: #ca3f97 1px 0 10px;
+	cursor: pointer;
+}
+
+.draft-choice-order {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 20px;
+	font-size: 32px;
+	text-shadow: #ca3f97 1px 0 10px;
+}
+
+.draft-choice-order h2 {
+	margin: 0;
+}
+.draft-choice-order ol {
+	margin: 5px 0;
+}
+
+@keyframes fadeListItemIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.draft-choice-order li {
+	text-align: left;
+	opacity: 0;
+	animation: fadeListItemIn 200ms ease-in forwards;
+	animation-delay: 2.5s;
+}
+
+@keyframes highlightSelection {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+.new-selection {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.new-selection .overlay {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.new-selection .selected-manager {
+	font-size: 150px;
+	animation: highlightSelection 2s ease-in;
+	position: relative;
+	text-shadow: #fc0 1px 0 10px;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
